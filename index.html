@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/css/uxcool.css">
+</head>
+<body>
+    <form class="ux-col-xs-8 ux-col-xs-offset-2 ux-form">
+        <div class="ux-form-group">
+            <label class="ux-col-xs-2 ux-control-label">姓名 :</label>
+            <div class="ux-col-xs-8">
+                <input type="text" class="ux-form-control" placeholder="请输入姓名">
+            </div>
+        </div>
+        <div class="ux-form-group">
+            <label class="ux-col-xs-2 ux-control-label">性别 :</label>
+            <div class="ux-col-xs-8">
+                <div class="ux-row">
+                    <div class="ux-col-xs-4">
+                        <label class="ux-radio">
+                            <span class="ux-radio-control">
+                                <i class="fu fu-radio-o"></i>
+                                <input type="radio" name="gender" value="male" checked>
+                            </span>男
+                        </label>
+                    </div>
+                    <div class="ux-col-xs-4">
+                        <label class="ux-radio">
+                            <span class="ux-radio-control">
+                                <i class="fu fu-radio"></i>
+                                <input type="radio" name="gender" value="female">
+                            </span>女
+                        </label>
+                    </div>
+                    <div class="ux-col-xs-4">
+                        <label class="ux-radio">
+                            <span class="ux-radio-control">
+                                <i class="fu fu-radio"></i>
+                                <input type="radio" name="gender" value="unknown">
+                            </span>未知
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ux-form-group">
+            <label class="ux-col-xs-2 ux-control-label">爱好 :</label>
+            <div class="ux-col-xs-8">
+                <div class="ux-row">
+                    <div class="ux-col-xs-4">
+                        <label class="ux-checkbox">
+                            <span class="ux-checkbox-control">
+                                <i class="fu fu-checkbox-o"></i>
+                                <input type="checkbox" name="hobby" value="sports" checked>
+                            </span>运动
+                        </label>
+                    </div>
+                    <div class="ux-col-xs-4">
+                        <label class="ux-checkbox">
+                            <span class="ux-checkbox-control">
+                                <i class="fu fu-checkbox"></i>
+                                <input type="checkbox" name="hobby" value="movie">
+                            </span>电影
+                        </label>
+                    </div>
+                    <div class="ux-col-xs-4">
+                        <label class="ux-checkbox">
+                            <span class="ux-checkbox-control">
+                                <i class="fu fu-checkbox-o"></i>
+                                <input type="checkbox" name="hobby" value="reading">
+                            </span>阅读
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <div class="ux-row">
+                <div class="ux-col-xs-8 ux-col-xs-offset-2">
+                    <button class="ux-btn btn-primary">提交</button>
+                    <button class="ux-btn btn-default">返回</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="dist/js/uxcool.js"></script>
+    <script>
+        $(function() {
+            $(':checkbox, :radio').uxCheck();
+        });
+    </script>   
+</body>
+</html> 

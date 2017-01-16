@@ -1,0 +1,135 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background: @body-bg;
+    font-size: @font-size-base;
+    font-family: @font-family-base;
+    line-height: @line-height-base;
+    color: @text-color;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: @link-color;
+  text-decoration: @link-decoration;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: @font-weight-bold;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; 
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+    display: block;
+}
+
+textarea {
+  resize: none;
+}
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+caption {
+    text-align: left;
+}
+
+table {
+    border-spacing: 0;
+    background-color: @table-bg;
+    border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}

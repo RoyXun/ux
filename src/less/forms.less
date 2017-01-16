@@ -1,0 +1,188 @@
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+  // so we reset that to ensure it behaves more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359.
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: @line-height-computed;
+  font-size: (@font-size-base * 1.5);
+  line-height: inherit;
+  color: @legend-color;
+  border: 0;
+  border-bottom: 1px solid @legend-border-color;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+}
+
+input[type="search"] {
+  .box-sizing(border-box);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Focus for file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  .tab-focus();
+}
+
+.ux-form-control {
+  display: block;
+  width: 100%;
+  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: @input-padding-vertical @input-padding-horizontal;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @input-color;
+  background-color: @input-bg;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid @input-border;
+  border-radius: @input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  .form-control-focus();
+
+  // Placeholder
+  .placeholder();
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    border: 0;
+    background-color: transparent;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+  }
+
+  // Reset height for `textarea`s
+  textarea& {
+    height: auto;
+  }
+}
+
+.ux-form-group {
+  margin-bottom: @form-group-margin-bottom;
+}
+
+.ux-form-group.validation {
+  margin-bottom: @form-group-validation-margin-bottom;
+}
+
+.ux-validation {
+  min-height: 30px;
+  padding: 6px 0 4px;
+  font-size: 12px;
+  color: @muted;
+  line-height: 20px;
+}
+
+.ux-checkbox,
+.ux-radio {
+  padding-top: (@padding-base-vertical + 2);
+  padding-bottom: (@padding-base-vertical + 2);
+  font-size: 12px;
+}
+
+.ux-checkbox-control,
+.ux-radio-control {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    .fu {
+        display: inline-block;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: -1px;
+    }
+    input[type=checkbox],
+    input[type=radio] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        .opacity(0);
+        cursor: pointer;
+    }
+    &.disabled ,
+    fieldset[disabled] & {
+        input {
+            cursor: @cursor-disabled;
+        }
+    }
+} 
+
+.ux-control-label {
+    margin-bottom: 5px;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-base;
+}
+
+.ux-form-control-static {
+    min-height: (@line-height-computed + @font-size-small);
+    margin-bottom: 0;
+    padding-top: (@padding-base-vertical + 2);
+    padding-bottom: (@padding-base-vertical + 2);
+    font-size: @font-size-small;
+    line-height: @line-height-computed;
+}
+
+//horizontal form
+.ux-form {
+    .ux-control-label {
+        margin-bottom: 0;
+        padding-top: (@padding-base-vertical + 2);
+        text-align: right;
+    } 
+    .ux-form-group {
+        .make-row();
+    }   
+}
