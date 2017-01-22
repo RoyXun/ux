@@ -127,9 +127,11 @@ input[type="checkbox"]:focus {
 
 .ux-checkbox,
 .ux-radio {
+  margin-top: 2px;
   padding-top: (@padding-base-vertical + 2);
   padding-bottom: (@padding-base-vertical + 2);
   font-size: 12px;
+  line-height: @line-height-computed;
 }
 
 .ux-checkbox-control,
@@ -138,17 +140,19 @@ input[type="checkbox"]:focus {
     position: relative;
     width: 20px;
     height: 20px;
+    vertical-align: middle;
     .fu {
         display: inline-block;
         font-size: 16px;
         text-align: center;
-        vertical-align: -1px;
+        margin-top: -1px;
     }
     input[type=checkbox],
     input[type=radio] {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 2px;
+        left: 2px;
+        margin: 0;
         .opacity(0);
         cursor: pointer;
     }
@@ -157,12 +161,16 @@ input[type="checkbox"]:focus {
         input {
             cursor: @cursor-disabled;
         }
+        .fu {
+            color: @muted;
+            .opacity(0.65);
+        }
     }
 } 
 
 .ux-control-label {
     margin-bottom: 5px;
-    font-weight: @font-weight-bold;
+    font-weight: @font-weight-normal;
     font-size: @font-size-base;
 }
 

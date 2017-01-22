@@ -491,9 +491,6 @@ pre {
 figure {
   margin: 0 0 1rem;
 }
-img {
-  display: block;
-}
 textarea {
   resize: none;
 }
@@ -1500,9 +1497,11 @@ textarea.ux-form-control {
 }
 .ux-checkbox,
 .ux-radio {
+  margin-top: 2px;
   padding-top: 6px;
   padding-bottom: 6px;
   font-size: 12px;
+  line-height: 20px;
 }
 .ux-checkbox-control,
 .ux-radio-control {
@@ -1510,21 +1509,23 @@ textarea.ux-form-control {
   position: relative;
   width: 20px;
   height: 20px;
+  vertical-align: middle;
 }
 .ux-checkbox-control .fu,
 .ux-radio-control .fu {
   display: inline-block;
   font-size: 16px;
   text-align: center;
-  vertical-align: -1px;
+  margin-top: -1px;
 }
 .ux-checkbox-control input[type=checkbox],
 .ux-radio-control input[type=checkbox],
 .ux-checkbox-control input[type=radio],
 .ux-radio-control input[type=radio] {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2px;
+  left: 2px;
+  margin: 0;
   opacity: 0;
   filter: alpha(opacity=0);
   cursor: pointer;
@@ -1535,9 +1536,17 @@ fieldset[disabled] .ux-checkbox-control input,
 fieldset[disabled] .ux-radio-control input {
   cursor: not-allowed;
 }
+.ux-checkbox-control.disabled .fu,
+.ux-radio-control.disabled .fu,
+fieldset[disabled] .ux-checkbox-control .fu,
+fieldset[disabled] .ux-radio-control .fu {
+  color: #999;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
 .ux-control-label {
   margin-bottom: 5px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
 }
 .ux-form-control-static {
@@ -2280,6 +2289,9 @@ fieldset[disabled] .ux-radio-control input {
 }
 .text-muted {
   color: #999;
+}
+.text-gray {
+  color: #666;
 }
 .text-danger {
   color: #ea5353;

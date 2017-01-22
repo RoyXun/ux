@@ -10,7 +10,8 @@ if (typeof jQuery === 'undefined') {
             checkboxCheckedClass: 'fu-checkbox',
             checkboxUncheckedClass: 'fu-checkbox-o',
             radioCheckedClass: 'fu-radio',
-            radioUncheckedClass: 'fu-radio-o'
+            radioUncheckedClass: 'fu-radio-o',
+            disabledClass: 'disabled'
         }, options);
 
 
@@ -18,7 +19,10 @@ if (typeof jQuery === 'undefined') {
             $(this).on('click', function(e) {
                 var $this = $(this);
 
-                if ($this.is('.disabled, :disabled')) return;
+                if ($this.prop('disabled')) {
+                    $this.parent().addClass(settings.disabledClass);
+                    return;
+                } 
 
                 var $check = $this.siblings();
                 var isChecked = $this.prop('checked');

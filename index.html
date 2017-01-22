@@ -6,70 +6,70 @@
     <link rel="stylesheet" href="dist/css/uxcool.css">
 </head>
 <body>
-    <form class="ux-col-xs-8 ux-col-xs-offset-2 ux-form">
+    <form class="ux-col-xs-6 ux-col-xs-offset-3 ux-form">
         <div class="ux-form-group">
-            <label class="ux-col-xs-2 ux-control-label">姓名 :</label>
+            <label class="ux-col-xs-2 ux-control-label">Input :</label>
             <div class="ux-col-xs-8">
-                <input type="text" class="ux-form-control" placeholder="请输入姓名">
+                <input type="text" class="ux-form-control" placeholder="Enter text">
             </div>
         </div>
         <div class="ux-form-group">
-            <label class="ux-col-xs-2 ux-control-label">性别 :</label>
+            <label class="ux-col-xs-2 ux-control-label">radio :</label>
             <div class="ux-col-xs-8">
                 <div class="ux-row">
                     <div class="ux-col-xs-4">
                         <label class="ux-radio">
                             <span class="ux-radio-control">
                                 <i class="fu fu-radio-o"></i>
-                                <input type="radio" name="gender" value="male" checked>
-                            </span>男
+                                <input type="radio" name="optionRadios" value="option1" checked>
+                            </span>option1
                         </label>
                     </div>
                     <div class="ux-col-xs-4">
                         <label class="ux-radio">
                             <span class="ux-radio-control">
                                 <i class="fu fu-radio"></i>
-                                <input type="radio" name="gender" value="female">
-                            </span>女
+                                <input type="radio" name="optionRadios" value="option2">
+                            </span>option2
                         </label>
                     </div>
                     <div class="ux-col-xs-4">
                         <label class="ux-radio">
                             <span class="ux-radio-control">
                                 <i class="fu fu-radio"></i>
-                                <input type="radio" name="gender" value="unknown">
-                            </span>未知
+                                <input type="radio" name="optionRadios" value="option3" disabled>
+                            </span>option3
                         </label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="ux-form-group">
-            <label class="ux-col-xs-2 ux-control-label">爱好 :</label>
+            <label class="ux-col-xs-2 ux-control-label">checkbox :</label>
             <div class="ux-col-xs-8">
                 <div class="ux-row">
                     <div class="ux-col-xs-4">
                         <label class="ux-checkbox">
                             <span class="ux-checkbox-control">
                                 <i class="fu fu-checkbox-o"></i>
-                                <input type="checkbox" name="hobby" value="sports" checked>
-                            </span>运动
+                                <input type="checkbox" checked>
+                            </span>checkbox1
                         </label>
                     </div>
                     <div class="ux-col-xs-4">
                         <label class="ux-checkbox">
                             <span class="ux-checkbox-control">
                                 <i class="fu fu-checkbox"></i>
-                                <input type="checkbox" name="hobby" value="movie">
-                            </span>电影
+                                <input type="checkbox"> 
+                            </span>checkbox2
                         </label>
                     </div>
                     <div class="ux-col-xs-4">
                         <label class="ux-checkbox">
                             <span class="ux-checkbox-control">
                                 <i class="fu fu-checkbox-o"></i>
-                                <input type="checkbox" name="hobby" value="reading">
-                            </span>阅读
+                                <input type="checkbox" disabled>
+                            </span>disabled
                         </label>
                     </div>
                 </div>
@@ -78,8 +78,8 @@
         <div class="form-actions">
             <div class="ux-row">
                 <div class="ux-col-xs-8 ux-col-xs-offset-2">
-                    <button class="ux-btn btn-primary">提交</button>
-                    <button class="ux-btn btn-default">返回</button>
+                    <button class="ux-btn btn-primary" type="submit">Submit</button>
+                    <button class="ux-btn btn-default" type="button">Cancel</button>
                 </div>
             </div>
         </div>
