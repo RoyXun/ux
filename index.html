@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="dist/css/uxcool.css">
+    <link rel="stylesheet" href="dist/css/index.css">
 </head>
 <body>
     <form class="ux-col-xs-8 ux-col-xs-offset-2 ux-form">
@@ -20,7 +21,7 @@
                     <div class="ux-col-xs-4">
                         <label class="ux-radio">
                             <span class="ux-radio-control">
-                                <i class="fu fu-radio-o"></i>
+                                <i class=""></i>
                                 <input type="radio" name="gender" value="male" checked>
                             </span>男
                         </label>
@@ -28,7 +29,7 @@
                     <div class="ux-col-xs-4">
                         <label class="ux-radio">
                             <span class="ux-radio-control">
-                                <i class="fu fu-radio"></i>
+                                <i class=""></i>
                                 <input type="radio" name="gender" value="female">
                             </span>女
                         </label>
@@ -36,8 +37,8 @@
                     <div class="ux-col-xs-4">
                         <label class="ux-radio">
                             <span class="ux-radio-control">
-                                <i class="fu fu-radio"></i>
-                                <input type="radio" name="gender" value="unknown">
+                                <i class=""></i>
+                                <input type="radio" name="gender" value="unknown" disabled>
                             </span>未知
                         </label>
                     </div>
@@ -51,7 +52,7 @@
                     <div class="ux-col-xs-4">
                         <label class="ux-checkbox">
                             <span class="ux-checkbox-control">
-                                <i class="fu fu-checkbox-o"></i>
+                                <i class=""></i>
                                 <input type="checkbox" name="hobby" value="sports" checked>
                             </span>运动
                         </label>
@@ -59,7 +60,7 @@
                     <div class="ux-col-xs-4">
                         <label class="ux-checkbox">
                             <span class="ux-checkbox-control">
-                                <i class="fu fu-checkbox"></i>
+                                <i class=""></i>
                                 <input type="checkbox" name="hobby" value="movie">
                             </span>电影
                         </label>
@@ -67,10 +68,33 @@
                     <div class="ux-col-xs-4">
                         <label class="ux-checkbox">
                             <span class="ux-checkbox-control">
-                                <i class="fu fu-checkbox-o"></i>
-                                <input type="checkbox" name="hobby" value="reading">
+                                <i class=""></i>
+                                <input type="checkbox" name="hobby" value="reading" disabled>
                             </span>阅读
                         </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ux-form-group">
+            <label class="ux-control-label ux-col-xs-2">数量 : </label>
+            <div class="ux-col-xs-6">
+                <div class="numeric-input-wrapper">
+                    <div class="numeric-input-group" data-ux-numeric="group">
+                        <div class="numeric-input-group-btn">
+                            <button type="button" class="numeric-input-btn" data-ux-numeric="dec">
+                                <i class="fu fu-minus"></i>
+                            </button>
+                        </div>
+                        <div class="numeric-input">
+                            <input type="text" class="ux-form-control" data-ux-numeric="input" id="number">
+                        </div>
+                        <div class="numeric-input-group-btn">
+                            <button type="button" class="numeric-input-btn" data-ux-numeric="inc">
+                                <i class="fu fu-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,7 +112,23 @@
     <script src="dist/js/uxcool.js"></script>
     <script>
         $(function() {
-            $(':checkbox, :radio').uxCheck();
+
+            $(':checkbox, :radio').uxCheck({
+                checkboxCheckedClass: 'checked',
+                checkboxUncheckedClass: '',
+                radioCheckedClass: 'checked',
+                radioUncheckedClass: ''
+            });
+
+            $('#number').uxNumeric({
+                min: 1,
+                max: 20,
+                limitCallBack: function(type) {
+                    alert('reached ' + type);
+                }
+            }).on('ux.numericChange', function(e, el, type) {
+                console.log('custom function...');
+            });
         });
     </script>   
 </body>

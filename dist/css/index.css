@@ -1,0 +1,123 @@
+/*override*/
+.ux-checkbox-control, .ux-radio-control {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+.ux-checkbox-control i,
+.ux-radio-control i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.ux-checkbox-control i {
+    background: url(../images/checkbox_n.png) no-repeat 0 center;
+}
+
+.ux-checkbox-control i.checked {
+    background: url(../images/checkbox_s.png) no-repeat 0 center;
+}
+
+.ux-checkbox-control.disabled i {
+    background: url(../images/checkbox_d.png) no-repeat 0 center;
+}
+
+.ux-checkbox-control.disabled i.checked {
+    background: url(../images/checkbox_s_d.png) no-repeat 0 center;
+}
+
+.ux-radio-control i {
+    background: url(../images/radio_n.png) no-repeat 0 center;
+}
+
+.ux-radio-control i.checked {
+    background: url(../images/radio_s.png) no-repeat 0 center;
+}
+
+.ux-radio-control.disabled i {
+    background: url(../images/radio_d.png) no-repeat 0 center;
+}
+
+.ux-radio-control.disabled i.checked {
+    background: url(../images/radio_s_d.png) no-repeat 0 center;
+}
+
+.ux-checkbox-control input[type=checkbox],
+.ux-radio-control input[type=radio] {
+    top: 4px;
+    left: 1px;
+}
+
+
+/*numeric-input-group*/
+.numeric-input-group {
+    display: table;
+    position: relative;
+    border-collapse: separate;
+}
+
+.numeric-input-group .numeric-input-group-btn {
+    display: table-cell;
+    position: relative;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.numeric-input-group .numeric-input-btn {
+    width: 20px;
+    height: 30px;
+    padding: 3px;
+    color: #333;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.numeric-input-group .numeric-input-btn:hover {
+    background: #e5e5e5;
+}
+
+.numeric-input-group .numeric-input-btn:focus {
+    outline: none;
+}
+
+.numeric-input-group .numeric-input-btn[disabled] {
+    opacity: .65;
+    filter: alpha(opacity=65);
+    cursor: not-allowed;
+}
+
+.numeric-input-group .numeric-input-btn[disabled]:hover {
+    background: #f2f2f2;
+}
+
+.numeric-input-group .numeric-input-btn i {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.numeric-input-group .numeric-input {
+    display: table-cell;
+    padding: 0 5px;
+}
+
+.numeric-input-group .numeric-input input {
+    height: 30px;
+    border-radius: 0;
+}
+
+.numeric-input-wrapper {
+    display: inline-block;
+    width: 180px;
+}
