@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="dist/css/index.css">
 </head>
 <body>
-    <form class="ux-col-xs-8 ux-col-xs-offset-2 ux-form">
+    <form class="ux-col-xs-6 ux-col-xs-offset-3 ux-form">
         <div class="ux-form-group">
-            <label class="ux-col-xs-2 ux-control-label">姓名 :</label>
+            <label class="ux-col-xs-2 ux-control-label">Input :</label>
             <div class="ux-col-xs-8">
-                <input type="text" class="ux-form-control" placeholder="请输入姓名">
+                <input type="text" class="ux-form-control" placeholder="Enter text">
             </div>
         </div>
         <div class="ux-form-group">
-            <label class="ux-col-xs-2 ux-control-label">性别 :</label>
+            <label class="ux-col-xs-2 ux-control-label">radio :</label>
             <div class="ux-col-xs-8">
                 <div class="ux-row">
                     <div class="ux-col-xs-4">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="ux-form-group">
-            <label class="ux-col-xs-2 ux-control-label">爱好 :</label>
+            <label class="ux-col-xs-2 ux-control-label">checkbox :</label>
             <div class="ux-col-xs-8">
                 <div class="ux-row">
                     <div class="ux-col-xs-4">
@@ -102,8 +102,8 @@
         <div class="form-actions">
             <div class="ux-row">
                 <div class="ux-col-xs-8 ux-col-xs-offset-2">
-                    <button class="ux-btn btn-primary">提交</button>
-                    <button class="ux-btn btn-default">返回</button>
+                    <button class="ux-btn btn-primary" type="submit">Submit</button>
+                    <button class="ux-btn btn-default" type="button">Cancel</button>
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@
             $('#number').uxNumeric({
                 min: 1,
                 max: 20,
-                limitCallBack: function(type) {
+                limitCallback: function(type) {
                     alert('reached ' + type);
                 }
             }).on('ux.numericChange', function(e, el, type) {

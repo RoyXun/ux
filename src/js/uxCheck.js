@@ -1,6 +1,6 @@
 (function ($) {
     'use strict';
-
+    
     $.fn.uxCheck = function(options) {
         var settings = $.extend({
             checkboxCheckedClass: 'fu-checkbox',
