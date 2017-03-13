@@ -55,7 +55,7 @@
     var UXNumeric = function(element, options) {
         this.element = element;
         this.options = $.extend({}, UXNumeric.DEFAULTS, options);
-        this.lastValidValue = getValidValue(this.options.initValue, this.options.min, this.options.max);
+        this.lastValidValue = getValidValue(this.options.initValue, this.options.min, this.options.max, this.options.step);
         element.val(this.lastValidValue);
     };
 
@@ -100,7 +100,7 @@
 
     UXNumeric.prototype.checkValidity = function() {
         var element = this.element;
-        var value = getValidValue(element.val(), this.options.min, this.options.max);
+        var value = getValidValue(element.val(), this.options.min, this.options.max, this.options.step);
 
         element.val(value);
         if (value != this.lastValidValue) {
@@ -110,12 +110,20 @@
 
     };
 
-    function getValidValue(input, min, max) {
+    function getValidValue(input, min, max, step) {
         var value = parseFloat(input) || min;
+        step = +step || 1;
         if (value < min) {
             value = min;
         } else if (value > max) {
             value = max;
+        }
+
+        value = Math.round(value / step) * step;
+        if (value < min) {
+            value += step;
+        } else if (value > max) {
+            value -= step;
         }
         return value;
     }
