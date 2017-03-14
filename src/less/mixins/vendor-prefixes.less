@@ -98,15 +98,16 @@
 }
 
 // Placeholder text
-.placeholder(@color: @input-placeholder-color; @font-size: @input-placeholder-font-size;) {
+.placeholder(@line-height: @line-height-computed; @color: @input-placeholder-color; @font-size: @input-placeholder-font-size;) {
   // Firefox
   &::-moz-placeholder {
+    line-height: @line-height;
     color: @color;
     font-size: @font-size;
     opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
   }
-  &:-ms-input-placeholder { color: @color; font-size: @font-size; } // Internet Explorer 10+
-  &::-webkit-input-placeholder  { color: @color; font-size: @font-size; } // Safari and Chrome
+  &:-ms-input-placeholder { line-height: @line-height; color: @color; font-size: @font-size; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { line-height: @line-height; color: @color; font-size: @font-size; } // Safari and Chrome
 }
 
 // Transformations
