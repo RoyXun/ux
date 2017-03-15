@@ -30,14 +30,9 @@ a {
   color: @link-color;
   text-decoration: @link-decoration;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: @link-hover-color;
     text-decoration: @link-hover-decoration;
-  }
-
-  &:focus {
-    .tab-focus();
   }
 }
 
@@ -102,18 +97,6 @@ figure {
 
 textarea {
   resize: none;
-}
-
-a,
-area,
-button,
-[role="button"],
-input,
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
 }
 
 caption {
